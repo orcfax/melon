@@ -1,0 +1,32 @@
+[package]
+name = "melon-set"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+rust-version.workspace = true
+
+[package.metadata.release]
+release = false
+
+[dependencies]
+anyhow.workspace = true
+bls12_381.workspace = true
+clap.workspace = true
+dashmap.workspace = true
+rand.workspace = true
+serde.workspace = true
+serde_with = { workspace = true, features = ["hex"] }
+thiserror.workspace = true
+tokio.workspace = true
+tracing-subscriber.workspace = true
+tracing.workspace = true
+
+melon-core.workspace = true
+melon-crypto.workspace = true
+melon-net.workspace = true
+melon-bus.workspace = true

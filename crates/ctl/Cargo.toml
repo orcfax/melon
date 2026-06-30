@@ -1,0 +1,28 @@
+[package]
+name = "melon-ctl"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+rust-version.workspace = true
+
+[package.metadata.release]
+release = false
+
+[dependencies]
+anyhow.workspace = true
+bls12_381.workspace = true
+clap.workspace = true
+hex.workspace = true
+melon-bus.workspace = true
+melon-core.workspace = true
+melon-crypto.workspace = true
+minicbor.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true

@@ -1,0 +1,33 @@
+# Variables
+out_dir      := "build"
+style_config := "assets/mermaid-config.json"
+style_css    := "assets/style.css"
+favicon_svg  := "assets/favicon.svg"
+
+# Show available recipes
+help:
+    @just --list
+
+# Process inline Mermaid blocks within a Markdown file and render to HTML
+# Usage: just build (defaults to sequences.md)
+@build doc="sequences.md":
+    @mkdir -p {{out_dir}}
+    @echo "Extracting Mermaid diagrams from {{doc}}..."
+    # mmdc processes the md file, generates SVGs in out/, and creates a processed md
+    mmdc -i "{{doc}}" -o "__processed.md" -c {{style_config}} -b "#0f172a" 
+    
+    @echo "Rendering HTML from processed markdown..."
+    pandoc "__processed.md" -o "{{out_dir}}/index.html" \
+        --standalone \
+        --embed-resources \
+        -f markdown-implicit_figures \
+        --css {{style_css}} \
+        -V header-includes="<link rel='icon' href='data:image/svg+xml;base64,$(svgo {{favicon_svg}} -o - -p 1 --quiet | base64 -w 0)'>"
+    @rm __processed*
+    @echo "Done! View output at {{out_dir}}/index.html"
+
+# Remove the output directory
+clean:
+    @rm __processed*
+    rm -rf {{out_dir}}
+

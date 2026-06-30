@@ -1,0 +1,90 @@
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  color: #c9d1d9;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 30px;
+  background-color: #0d1117;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #f0f6fc;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 0.3em;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(110, 118, 129, 0.4);
+  border-radius: 3px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #161b22;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #e6edf3;
+}
+
+img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #ffffff; /* Keeping white BG for diagrams as they often have dark lines */
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 10px;
+  display: block;
+  margin: 20px auto;
+}
+
+blockquote {
+  padding: 0 1em;
+  color: #8b949e;
+  border-left: 0.25em solid #30363d;
+  margin: 0 0 16px 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 16px;
+  color: #c9d1d9;
+}
+
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #30363d;
+}
+
+table tr:nth-child(even) {
+  background-color: #161b22;
+}
+
+table th {
+  background-color: #1f242c;
+  font-weight: 600;
+}

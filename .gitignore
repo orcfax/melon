@@ -1,0 +1,19 @@
+.env
+.envrc
+.pre-commit-config.yaml
+
+db/
+data/
+tmp/
+configs/
+
+result
+
+secrets/
+.direnv/
+target/
+
+
+# Added by cargo
+
+/target

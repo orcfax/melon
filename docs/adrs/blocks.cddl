@@ -1,0 +1,91 @@
+; Melon Block Specification (CDDL)
+
+block = standard_block / epoch_block / period_block
+
+standard_block = [
+    head: standard_head,
+    body: standard_body
+]
+
+epoch_block = [
+    head: epoch_head,
+    body: epoch_body
+]
+
+period_block = [
+    head: period_head,
+    body: period_body
+]
+
+; --- Headers ---
+
+standard_head = [
+    quad,
+    parent_id: id,
+    signature: bls_signature
+]
+
+epoch_head = [
+    triple,
+    parent_id: id,
+    signature: bls_signature
+]
+
+period_head = [
+    pair,
+    parent_id: id,
+    signature: bls_signature
+]
+
+; --- Body Types ---
+
+; Standard body is a lean list of pre-verified item IDs
+standard_body = [ * id ]
+
+; Epoch body (Boundary Block) checkpoints state and validator sets
+epoch_body = [
+    state_root: id,
+    validator_set_root: id
+]
+
+; Period body (Hard Fork/Era Start) provides the Manifest and State Anchor
+period_body = [
+    state_root: id,
+    manifest: manifest
+]
+
+manifest = {
+    protocol_version: uint,
+    genesis_time: uint,
+    slot_duration: uint,
+    epoch_length: uint,
+    signing_scheme: uint,
+    initial_live_set: [ * id ]
+}
+
+; --- Coordinate System ---
+
+; Persistent height across all coordinates ensures absolute indexing.
+
+quad = [
+    period: uint,
+    epoch: uint,
+    slot: uint,
+    height: uint
+]
+
+triple = [
+    period: uint,
+    epoch: uint,
+    height: uint
+]
+
+pair = [
+    period: uint,
+    height: uint
+]
+
+; --- Primitive Types ---
+
+id = bstr .size 32            ; blake3 hash
+bls_signature = bstr .size 48 ; BLS G1 point (compressed)

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Concentric Circles in shades of blue -->
+<circle cx="50" cy="50" r="45" fill="#003366" />
+<circle cx="50" cy="50" r="35" fill="#0066cc" />
+<circle cx="50" cy="50" r="25" fill="#3399ff" />
+<circle cx="50" cy="50" r="15" fill="#99ccff" />
+<circle cx="50" cy="50" r="5" fill="#e6f2ff" />
+</svg>

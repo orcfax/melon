@@ -1,0 +1,29 @@
+[package]
+name = "melon-bus"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+rust-version.workspace = true
+
+[package.metadata.release]
+release = false
+
+[dependencies]
+blake3.workspace = true
+ed25519-dalek.workspace = true
+hex.workspace = true
+libp2p.workspace = true
+melon-crypto.workspace = true
+melon-core.workspace = true
+minicbor.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+rand.workspace = true
