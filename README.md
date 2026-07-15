@@ -68,7 +68,8 @@ statements are identified as `Agreed`.
 
 ## Todo
 
-- [ ] docs - need updating
+The following components are outside the approved scope of the Catalyst proof-of-concept milestone of which this work is a part. They are potential production-system extensions and are not required to demonstrate external data ingestion, independent validation, peer comparison, or quorum agreement.
+
 - [ ] seq - sequencer needs updating
 - [ ] exe - executor needs implementing
 - [ ] blob - store needs implementing

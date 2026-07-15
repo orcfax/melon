@@ -4,11 +4,15 @@
 
 More general context is found in the [context document](./context.md).
 
-## Blackboxing
+## Design assumptions
 
-For our initial endeavour we'll blackbox the particulars of Orcfax. The key
-features relevant here are as follows:
+The framing of the requirements is partly based on assumptions on the form of
+the output.
 
+- The software is, or mimics, a service on a computer.
+- Each participant is running an instance of the software.
+- State must be communicated between participants.
+- If relevant, assume participants can communicate via TCP or UDP based.
 - A participant is the holder of a private key of a key pair.
 - Identity is established, at least initially, via the public key communicated
   out-of-band.
@@ -20,25 +24,12 @@ features relevant here are as follows:
   should be run on the receipt of data (atoms, _etc_).
 - Assume that a super majority of participants are honest and competent.
 
-If it becomes apparent that the particulars of Orcfax are relevant, then we will
-revisit these assumptions.
-
-## Design assumptions
-
-The framing of the requirements is partly based on assumptions on the form of
-the output.
-
-- The software is, or mimics, a service on a computer.
-- Each participant is running an instance of the software.
-- State must be communicated between participants.
-- If relevant, assume participants can communicate via TCP or UDP based.
-
 If these assumptions turn out to be inappropriate, then accommodations should be
 made.
 
 ## Requirements
 
-Must haves (parameters outlined below):
+Must haves for Catalyst Milestone (parameters outlined below):
 
 1. Participants efficiently communicate their state
 1. Participants run validity checks on any data they receive. If appropriate,
@@ -49,20 +40,6 @@ Must haves (parameters outlined below):
    finality is not a property of the consensus mechanism, then replace this with
    an analogous condition (eg high probability _etc_).
 1. In normal conditions, throughput averaging > V statements per second
-1. Impossible to publish a bad statement with K number of malicious nodes
-1. Impossible to crash the system with K number of malicious nodes
-
-Should haves:
-
-1. Runs on a lower resource device.
-
-Could haves:
-
-1. Keep the existing signature system of L1.
-1. Make more explicit the relationship to L1 and how the participants can join
-   the network.
-1. Ways to recognise, and record "good" and "bad" behaviour of participants with
-   respect to consensus.
 
 Ballpark parameters:
 
@@ -73,6 +50,4 @@ Ballpark parameters:
 
 ## Notes
 
-This document is a working document. It is based on our [context](./context.md)
-and a reflection of our current best understanding of consensus and our future
-needs.
+This document is a working document. It is based on our [context](./context.md).
